@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>move-me</title>
+        <style>
+            div.square {
+                border: 2px solid red;
+                height: 10vh;
+                transition: .3s;
+                border-radius: 20px;
+            }
+
+            div.square div.bullet {
+                height: 10vh;
+                width: 10vh;
+                background: green;
+                border-radius: 50%;
+                transition: .3s .3s;
+            }
+
+            div.square.clicked {
+                background: indigo;
+                transform: rotate(3deg);
+            }
+
+            div.square.clicked div.bullet {
+                transform: translateX(100%);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="square">
+            <div class="bullet"></div>
+        </div>
+        <script>
+            const check = document.querySelector("div.square")
+            
+            check.addEventListener("click", ev => {
+                check.classList.toggle("clicked")
+                // ev.target.classList.toggle("clicked")
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Like do Insta ^^</title>
+        <style>
+            main {
+                border: 5px solid red;
+                display: flex;
+                cursor: pointer;
+            }
+
+            div {
+                border: 5px solid green;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            div:nth-child(1) {
+                width: 10vh;
+                height: 10vh;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div>A</div>
+            <div>0</div>
+        </main>
+        <script>
+            const domMain = document.querySelector("main")
+            // const domDivNum = document.querySelector("main div:last-child")
+            const domDivNum = domMain.querySelector("div:last-child")
+            let counter = 0 
+            domMain.addEventListener("click", () => {
+                counter++
+                domDivNum.innerHTML = counter
+            })
+        </script>
+    </body>
+</html>

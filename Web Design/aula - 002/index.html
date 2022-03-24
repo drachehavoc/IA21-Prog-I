@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Teste</title>
+        <style>
+            form {
+                border: 2px solid purple;
+                display: inline-block;
+            }
+
+            form>div {
+                border: 2px solid cyan
+            }
+
+            form>div>label {
+                border: 2px solid tan;
+            }
+        </style>
+    </head>
+
+    <body>
+        <form>
+            <div>
+                <label for="valor01">Valor 01</label>
+                <input id="valor01" placeholder="digite o valor 01 para o calculo" type="number">
+            </div>
+            <div>
+                <label for="valor02">Valor 02</label>
+                <input x=12 id="valor02" placeholder="digite o valor 02 para o calculo" type="number">
+            </div>
+            <div>
+                <button id="bt-somar">somar</button>
+                <button id="bt-mutiplicar">multiplicar</button>
+            </div>
+        </form>
+        <script>
+            const form = document.querySelector("form")
+            const btSomar = form.querySelector("#bt-somar")
+            const btMult = form.querySelector("#bt-mutiplicar")
+            const inpValor01 = form.querySelector("#valor01")
+            const inpValor02 = form.querySelector("#valor02")
+
+            form.addEventListener("submit", ev => {
+                ev.preventDefault()
+            })
+
+            btSomar.addEventListener("click", ev => {
+                var a = inpValor01.value
+                var b = inpValor02.value
+                var res = parseInt(a) + parseInt(b)
+                inpValor01.value = res
+            })
+
+            btMult.addEventListener("click", ev => {
+                var a = inpValor01.value
+                var b = inpValor02.value
+                var res = parseInt(a) * parseInt(b)
+                inpValor01.value = res
+            })
+        </script>
+    </body>
+
+    </html>

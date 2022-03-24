@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+
+header {
+    /* border: 1px solid green; */
+    display: flex;
+    padding: 1vw; 
+}
+
+header .thumb {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 15vw;
+    height: 15vw;
+    flex: none;
+    /* border: 1px solid yellow; */
+}
+
+header .thumb img {
+    width: 100%;
+}  
+
+header p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 2.5vw;
+    padding: 0 0 0 3vw;
+    /* border: 1px solid black; */
+}
+
+main {
+    padding: 1vw;
+    /* border: 1px solid violet; */
+}
+
+main form {
+    /* border: 1px solid tomato; */
+}
+
+main form > div {
+    margin-bottom: 1vw;
+    /* border: 1px solid blue; */
+}
+
+main form > div:last-child {
+    margin-bottom: 0
+}
+
+main form > div label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 2.5vw;
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+    /* border: 1px solid red; */
+}
+
+main form > div input {
+    border: 0 none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 2.5vw;
+    /* border: 1px solid red; */
+}
+
+main form > div button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 2.5vw;
+    background-color: turquoise;
+    border-radius: 4px;
+    border: 0 none;
+    /* border: 1px solid red; */
+}
+
+
+footer {
+    border: 1px solid yellowgreen;
+    min-height: 10vh;
+}
