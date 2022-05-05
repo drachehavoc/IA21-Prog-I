@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Like do Insta ^^</title>
+    <style>
+        main {
+            user-select: none;
+            border: 5px solid red;
+            display: flex;
+            cursor: pointer;
+            font-size: 5vh;
+        }
+
+        div {
+            border: 5px solid green;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div:first-child {
+            width: 10vh;
+            height: 10vh;
+            flex: none;
+            position: relative;
+            border: 0 none;
+            background-color: gray;
+            transform: rotate(45deg) scale(.5);
+            transition: .3s;
+            /* transition: 300ms; */
+        }
+
+        div:first-child:hover {
+            background-color: red;
+        }
+
+        div:first-child:before,
+        div:first-child:after {
+            content: " ";
+            background-color: inherit;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        div:first-child:before {
+            top: -50%;
+            left: 0%;
+        }
+
+        div:first-child:after {
+            top: 0%;
+            left: -50%;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div> </div>
+        <div>0</div>
+    </main>
+    <script>
+        const domMain = document.querySelector("main")
+        // const domDivNum = document.querySelector("main div:last-child")
+        const domDivNum = domMain.querySelector("div:last-child")
+        let counter = 0
+        domMain.addEventListener("click", () => {
+            counter++
+            domDivNum.innerHTML = counter
+        })
+    </script>
+</body>
+
+</html>
