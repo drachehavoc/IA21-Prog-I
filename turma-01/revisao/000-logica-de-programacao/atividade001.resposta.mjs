@@ -1,7 +1,7 @@
 import * as readline from 'readline'
 import { stdin as input, stdout as output } from 'process'
 const rl = readline.createInterface({ input, output })
-const question = q => new Promise((rs, rj) => rl.question(q, a => rs(a)))
+const question = q => new Promise((rs, rj) => rl.question(q + ' ', a => rs(a)))
 
 const color = {
     reset: "\x1b[0m",
@@ -11,7 +11,7 @@ const color = {
     blink: "\x1b[5m",
     reverse: "\x1b[7m",
     hidden: "\x1b[8m",
-    
+
     fg: {
         black: "\x1b[30m",
         red: "\x1b[31m",
@@ -34,26 +34,31 @@ const color = {
         white: "\x1b[47m",
         crimson: "\x1b[48m"
     }
-};
+}
 
 let soma = 0
 let count = 0
 let media
 
 while (true) {
-    let strNota = await question('Insira o valor ' + (count + 1) + ' ou (N) para realizar as médias: ')
-    if (strNota.toUpperCase() == 'N') break 
+    let strNota = await question(`Digite o valor da ${count + 1}° nota ou N/n para cacular a média entre os valores inseridos:`)
+    if (strNota.toUpperCase() == 'N') break
     let nota = parseFloat(strNota)
-    
-    if(isNaN(nota)) {
-        console.log(color.fg.red, "asdasdaksdhsakjdsa", color.reset)
+
+    if (isNaN(nota) || nota < 0 || nota > 10) {
+        console.log(`${color.fg.red}[ ERRO ] Por favor digite um número real entre 0 e 10 ou a letra N/n.${color.reset}`)
         continue
     }
 
-    soma = soma + nota 
+    soma = soma + nota
     count++
 }
 
+if (count <= 0) {
+    console.log(`${color.fg.red}[ ERRO ] Nenhum valor foi digitado para que fosse possível calcular média.${color.reset}`)
+    process.exit()
+}
+
 media = soma / count
-console.log('A média dos valores é: ', media)
+console.log(`${color.fg.green}[ RESULTADO ] A média de todos os valores informados é ${color.fg.yellow}${media}${color.reset}`)
 process.exit()
