@@ -1,20 +1,21 @@
 const canvas = document.createElement("canvas")
 const context = canvas.getContext("2d")
 
-canvas.width = 800
-canvas.height = 650
+canvas.width = 400
+canvas.height = 350
 
 let x = 100
-let barWidth = 100
-let barHeight = 20
+let barWidth = 50
+let barHeight = 10
 let directionX = 0
+let speed = 10
 
 document.addEventListener("keydown", ev => {
     if (!ev.repeat && ev.code == "KeyD") 
-        return directionX = 2
+        return directionX = speed
 
     if (!ev.repeat && ev.code == "KeyA")
-        return directionX = -2
+        return directionX = -speed
 })
 
 document.addEventListener("keyup", ev => {
