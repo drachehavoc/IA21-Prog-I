@@ -22,7 +22,7 @@ export class Bar {
 
     moveRight() { }
 
-    draw() { }
+    render() { }
 }
 
 const bar = new Bar(20, 100, 10, "red")
