@@ -1,23 +1,24 @@
 const canvas = document.createElement("canvas")
 const context = canvas.getContext("2d")
 
-canvas.width = 800
-canvas.height = 600
+canvas.width = 300
+canvas.height = 300
 
 let y = 100
 let directionY = 0
-let barSize = 100
-
+let barHeight = 50
+let barWidth = 10
+let speed = 5
 
 document.addEventListener("keydown", ev => {
   if (ev.repeat)
     return
 
   if (ev.code == "KeyS")
-    return directionY = 10
+    return directionY = speed
 
   if (ev.code == "KeyW")
-    return directionY = -10
+    return directionY = -speed
 })
 
 document.addEventListener("keyup", ev => { 
@@ -27,9 +28,9 @@ document.addEventListener("keyup", ev => {
 
 function mainLoop() {
   context.clearRect(0, 0, canvas.width, canvas.height)
-  context.fillRect(10, y, 20, barSize)
+  context.fillRect(10, y, barWidth, barHeight)
   y += directionY
-  if(y <= 0 || y >= canvas.height - barSize) {
+  if(y <= 0 || y >= canvas.height - barHeight) {
     directionY = 0 
   }
   requestAnimationFrame(mainLoop)
